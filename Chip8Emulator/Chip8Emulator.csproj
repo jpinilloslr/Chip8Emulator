@@ -51,7 +51,7 @@
     <Compile Include="Core\Input.cs" />
     <Compile Include="Core\Memory.cs" />
     <Compile Include="Core\Stack.cs" />
-    <Compile Include="Core\System.cs" />
+    <Compile Include="Core\Chip8System.cs" />
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,29 +69,75 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="Games\15PUZZLE" />
-    <None Include="Games\BLINKY" />
-    <None Include="Games\BLITZ" />
-    <None Include="Games\BRIX" />
-    <None Include="Games\CONNECT4" />
-    <None Include="Games\GUESS" />
-    <None Include="Games\HIDDEN" />
-    <None Include="Games\INVADERS" />
-    <None Include="Games\KALEID" />
-    <None Include="Games\MAZE" />
-    <None Include="Games\MERLIN" />
-    <None Include="Games\MISSILE" />
-    <None Include="Games\PONG" />
-    <None Include="Games\PONG2" />
-    <None Include="Games\PUZZLE" />
-    <None Include="Games\SYZYGY" />
-    <None Include="Games\TANK" />
-    <None Include="Games\TETRIS" />
-    <None Include="Games\TICTAC" />
-    <None Include="Games\UFO" />
-    <None Include="Games\VBRIX" />
-    <None Include="Games\VERS" />
-    <None Include="Games\WIPEOFF" />
+    <None Include="Games\15PUZZLE">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\BLINKY">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\BLITZ">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\BRIX">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\CONNECT4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\GUESS">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\HIDDEN">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\INVADERS">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\KALEID">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\MAZE">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\MERLIN">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\MISSILE">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\PONG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\PONG2">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\PUZZLE">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\SYZYGY">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\TANK">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\TETRIS">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\TICTAC">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\UFO">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\VBRIX">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\VERS">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\WIPEOFF">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
