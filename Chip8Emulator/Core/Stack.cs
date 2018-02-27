@@ -2,21 +2,21 @@
 {
     public class Stack
     {
-        private short _sp;
-        private readonly short[] _data;
+        private ushort _sp;
+        private readonly ushort[] _data;
 
         public Stack()
         {
-            _data = new short[16];
+            _data = new ushort[16];
         }
 
-        public void Push(short address)
+        public void Push(ushort address)
         {
             _data[_sp] = address;
             _sp++;
         }
 
-        public short Pop()
+        public ushort Pop()
         {
             var address = _data[_sp];
             _sp--;
