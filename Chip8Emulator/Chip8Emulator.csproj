@@ -50,6 +50,7 @@
     <Compile Include="Core\GraphicMemory.cs" />
     <Compile Include="Core\Input.cs" />
     <Compile Include="Core\InstructionSet\Op7xkk.cs" />
+    <Compile Include="Core\InstructionSet\Op8xy6.cs" />
     <Compile Include="Core\InstructionSet\Op8xy5.cs" />
     <Compile Include="Core\InstructionSet\Op8xy4.cs" />
     <Compile Include="Core\InstructionSet\OpFx55.cs" />
