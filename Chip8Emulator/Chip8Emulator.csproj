@@ -52,6 +52,8 @@
     <Compile Include="Core\InstructionSet\Op7xkk.cs" />
     <Compile Include="Core\InstructionSet\Op8xy5.cs" />
     <Compile Include="Core\InstructionSet\Op8xy4.cs" />
+    <Compile Include="Core\InstructionSet\OpFx55.cs" />
+    <Compile Include="Core\InstructionSet\OpFx65.cs" />
     <Compile Include="Core\InstructionSet\OpFx33.cs" />
     <Compile Include="Core\InstructionSet\Op8xy3.cs" />
     <Compile Include="Core\InstructionSet\Op8xy1.cs" />
