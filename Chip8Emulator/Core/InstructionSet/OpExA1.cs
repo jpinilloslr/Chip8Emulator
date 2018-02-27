@@ -1,11 +1,11 @@
 ﻿namespace Chip8Emulator.Core.InstructionSet
 {
     // ExA1 - SKNP Vx
-    public class ExA1 : IInstruction
+    public class ExA1 : Instruction
     {
-        public bool Match(ushort opcode) => (opcode & 0xF0FF) == 0xE0A1;
+        public override bool Match(ushort opcode) => (opcode & 0xF0FF) == 0xE0A1;
 
-        public void Run(ushort opcode, Chip8System system)
+        public override void Run(ushort opcode, Chip8System system)
         {
             var registerIndex = (byte)((opcode & 0x0F00) >> 8);
             var keyValue = system.Cpu.V[registerIndex];

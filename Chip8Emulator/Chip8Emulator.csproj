@@ -81,7 +81,7 @@
     <Compile Include="Core\InstructionSet\Op0nnn.cs" />
     <Compile Include="Core\InstructionSet\Op00EE.cs" />
     <Compile Include="Core\InstructionSet\Op2nnn.cs" />
-    <Compile Include="Core\InstructionSet\IInstruction.cs" />
+    <Compile Include="Core\InstructionSet\Instruction.cs" />
     <Compile Include="Core\InstructionSet\OpAnnn.cs" />
     <Compile Include="Core\InstructionSet\OpDxyn.cs" />
     <Compile Include="Core\InstructionSet\Op6xkk.cs" />

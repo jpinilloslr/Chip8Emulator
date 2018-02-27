@@ -1,11 +1,11 @@
 ﻿namespace Chip8Emulator.Core.InstructionSet
 {
     // 00EE - RET
-    public class Op00EE : IInstruction
+    public class Op00EE : Instruction
     {
-        public bool Match(ushort opcode) => opcode == 0x00EE;
+        public override bool Match(ushort opcode) => opcode == 0x00EE;
 
-        public void Run(ushort opcode, Chip8System system)
+        public override void Run(ushort opcode, Chip8System system)
         {
             var address = system.Stack.Pop();
             system.Cpu.PC = address;

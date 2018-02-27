@@ -1,11 +1,11 @@
 ﻿namespace Chip8Emulator.Core.InstructionSet
 {
     // 8xy2 - AND Vx, Vy
-    public class Op8xy2 : IInstruction
+    public class Op8xy2 : Instruction
     {
-        public bool Match(ushort opcode) => (opcode & 0xF00F) == 0x8002;
+        public override bool Match(ushort opcode) => (opcode & 0xF00F) == 0x8002;
 
-        public void Run(ushort opcode, Chip8System system)
+        public override void Run(ushort opcode, Chip8System system)
         {
             var registerIndex1 = (byte)((opcode & 0x0F00) >> 8);
             var registerIndex2 = (byte)((opcode & 0x00F0) >> 4);

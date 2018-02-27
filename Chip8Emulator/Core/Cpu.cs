@@ -9,7 +9,7 @@ namespace Chip8Emulator.Core
     public class Cpu
     {
         private readonly Chip8System _system;
-        private IEnumerable<IInstruction> _instructionSet;
+        private IEnumerable<Instruction> _instructionSet;
 
         public byte[] V { get; set; }
         public ushort I { get; set; }
@@ -26,11 +26,11 @@ namespace Chip8Emulator.Core
         private void LoadInstructionSet()
         {
             _instructionSet = Assembly.GetCallingAssembly().GetTypes()
-                .Where(x => x.GetInterface(nameof(IInstruction)) != null)
-                .Select(x => (IInstruction)Activator.CreateInstance(x));
+                .Where(x => x.IsSubclassOf(typeof(Instruction)))
+                .Select(x => (Instruction)Activator.CreateInstance(x));
         }
 
-        public void Step()
+        public bool Step()
         {
             var opcode = FetchOpcode();
             var instruction = _instructionSet.FirstOrDefault(x => x.Match(opcode));
@@ -39,6 +39,7 @@ namespace Chip8Emulator.Core
                 throw new Exception("Unknown opcode");
             }
             instruction.Run(opcode, _system);
+            return instruction.ShouldContinueExecution();
         }
 
         private ushort FetchOpcode()

@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 
 namespace Chip8Emulator.Core
 {
@@ -39,7 +40,27 @@ namespace Chip8Emulator.Core
 
         public void Step()
         {
-            Cpu.Step();
+            if (Cpu.Step())
+            {
+                ProcessTimers();
+            }
+        }
+
+        private void ProcessTimers()
+        {
+            if (DelayTimer > 0)
+            {
+                DelayTimer--;
+            }
+
+            if (SoundTimer > 0)
+            {
+                SoundTimer--;
+                if (SoundTimer == 0)
+                {
+                    Console.Beep();
+                }
+            }
         }
 
         private void LoadSystemFontSet()
