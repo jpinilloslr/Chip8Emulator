@@ -49,6 +49,7 @@
     <Compile Include="Core\Cpu.cs" />
     <Compile Include="Core\GraphicMemory.cs" />
     <Compile Include="Core\Input.cs" />
+    <Compile Include="Core\InstructionSet\Op00E0.cs" />
     <Compile Include="Core\InstructionSet\Op7xkk.cs" />
     <Compile Include="Core\InstructionSet\Op9xy0.cs" />
     <Compile Include="Core\InstructionSet\Op8xyE.cs" />

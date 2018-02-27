@@ -14,5 +14,13 @@
         {
             _data = new byte[64 * 32];
         }
+
+        public void Clear()
+        {
+            for (var i = 0; i < _data.Length; i++)
+            {
+                _data[i] = 0;
+            }
+        }
     }
 }
