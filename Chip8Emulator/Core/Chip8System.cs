@@ -4,8 +4,8 @@ namespace Chip8Emulator.Core
 {
     public class Chip8System
     {
-        public short DelayTimer { get; private set; }
-        public short SoundTimer { get; private set; }
+        public byte DelayTimer { get; set; }
+        public byte SoundTimer { get; set; }
 
         public Cpu Cpu { get; private set; }
         public Stack Stack { get; private set; }
