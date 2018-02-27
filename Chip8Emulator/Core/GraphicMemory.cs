@@ -1,4 +1,6 @@
-﻿namespace Chip8Emulator.Core
+﻿using System.Linq;
+
+namespace Chip8Emulator.Core
 {
     public class GraphicMemory
     {
@@ -12,15 +14,21 @@
 
         public GraphicMemory()
         {
-            _data = new byte[64 * 32];
+            Size = 64 * 32;
+            _data = new byte[Size];
         }
 
         public void Clear()
         {
-            for (var i = 0; i < _data.Length; i++)
+            for (var i = 0; i < Size; i++)
             {
                 _data[i] = 0;
             }
         }
+
+        public int Size { get; }
+
+        public override string ToString() => 
+            string.Join(", ", _data.Select(x => x.ToString()));
     }
 }

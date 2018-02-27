@@ -8,6 +8,7 @@
         public override void Run(ushort opcode, Chip8System system)
         {
             var registerIndex = (byte)((opcode & 0x0F00) >> 8);
+            system.Cpu.V[0xF] = (byte)((system.Cpu.I + system.Cpu.V[registerIndex] > 0xFFF) ? 1 : 0);
             system.Cpu.I += system.Cpu.V[registerIndex];
             system.Cpu.PC += 2;
         }

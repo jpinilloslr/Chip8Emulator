@@ -1,11 +1,13 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
+using System.Linq;
 using Chip8Emulator.Core.HardwareInterfaces;
 
 namespace Chip8Emulator.Core
 {
     public class Chip8System
     {
-        private bool _refreshScreen;
+        private bool _invalidatedScreen;
         private readonly IScreen _screen;
         private readonly IBuzzer _buzzer;
         private readonly IKeyboard _keyboard;
@@ -49,13 +51,16 @@ namespace Chip8Emulator.Core
 
         public void Step()
         {
-            _refreshScreen = false;
+            _invalidatedScreen = false;
             if (Cpu.Step())
             {
                 ProcessTimers();
                 ManageGraphics();
             }
+            //DumpAll();
         }
+
+        public void InvalidateScreen() => _invalidatedScreen = true;
 
         private void ProcessTimers()
         {
@@ -76,7 +81,7 @@ namespace Chip8Emulator.Core
 
         private void ManageGraphics()
         {
-            if (_refreshScreen)
+            if (_invalidatedScreen)
             {
                 _screen.Refresh(GraphicMemory);
             }
@@ -108,6 +113,20 @@ namespace Chip8Emulator.Core
             {
                 Memory[i] = data[i];
             }
+        }
+
+        public void DumpAll()
+        {
+            for (var i = 0; i < 16; i++)
+                Console.WriteLine($"CPU.V{i}: {Cpu.V[i]}");
+            Console.WriteLine($"CPU.I: {Cpu.I & 0x0FFF}");
+            Console.WriteLine($"CPU.PC: {Cpu.PC & 0x0FFF}");
+            Console.WriteLine("--------------------");
+            Console.WriteLine("Graphic memory:");
+            Console.WriteLine(string.Join(", ", GraphicMemory));
+            Console.WriteLine("--------------------");
+            Console.WriteLine("Memory:");
+            Console.WriteLine(string.Join(", ", Memory));
         }
     }
 }

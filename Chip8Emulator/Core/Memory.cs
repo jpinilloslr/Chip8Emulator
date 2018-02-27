@@ -1,4 +1,6 @@
-﻿namespace Chip8Emulator.Core
+﻿using System.Linq;
+
+namespace Chip8Emulator.Core
 {
     public class Memory
     {
@@ -14,5 +16,8 @@
         {
             _data = new byte[4096];
         }
+
+        public override string ToString() =>
+            string.Join(", ", _data.Select(x => x.ToString()));
     }
 }

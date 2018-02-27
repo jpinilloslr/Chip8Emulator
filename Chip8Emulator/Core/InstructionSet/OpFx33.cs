@@ -9,8 +9,8 @@
         {
             var registerIndex = (byte)((opcode & 0x0F00) >> 8);
             system.Memory[system.Cpu.I] = (byte)(system.Cpu.V[registerIndex] / 100);
-            system.Memory[system.Cpu.I + 1] = (byte)((system.Cpu.V[registerIndex] / 10) % 10);
-            system.Memory[system.Cpu.I + 2] = (byte)((system.Cpu.V[registerIndex] % 100) % 10);
+            system.Memory[system.Cpu.I + 1] = (byte)(system.Cpu.V[registerIndex] / 10 % 10);
+            system.Memory[system.Cpu.I + 2] = (byte)(system.Cpu.V[registerIndex] % 100 % 10);
             system.Cpu.PC += 2;
         }
     }
