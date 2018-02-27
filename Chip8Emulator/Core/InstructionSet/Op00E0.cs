@@ -8,6 +8,7 @@
         public void Run(ushort opcode, Chip8System system)
         {
             system.GraphicMemory.Clear();
+            system.Cpu.PC += 2;
         }
     }
 }
