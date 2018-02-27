@@ -1,7 +1,7 @@
 ﻿namespace Chip8Emulator.Core.InstructionSet
 {
     // Fx33 - LD B, Vx
-    public class LoadBCDOfRegisterInstruction : IInstruction
+    public class OpFx33 : IInstruction
     {
         public bool Match(ushort opcode) => (opcode & 0xF0FF) == 0xF033;
 

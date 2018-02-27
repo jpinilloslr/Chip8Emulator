@@ -1,7 +1,7 @@
 ﻿namespace Chip8Emulator.Core.InstructionSet
 {
     // 0nnn - SYS addr
-    public class SystemInstruction : IInstruction
+    public class Op0nnn : IInstruction
     {
         public bool Match(ushort opcode) => 
             (opcode & 0xF000) == 0x0000 && opcode != 0x00EE && opcode != 0x00E0;

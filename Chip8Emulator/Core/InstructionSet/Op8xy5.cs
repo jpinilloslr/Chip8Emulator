@@ -3,7 +3,7 @@
 namespace Chip8Emulator.Core.InstructionSet
 {
     // 8xy5 - SUB Vx, Vy
-    public class SubRegisterInstruction : IInstruction
+    public class Op8xy5 : IInstruction
     {
         public bool Match(ushort opcode) => (opcode & 0xF00F) == 0x8005;
 

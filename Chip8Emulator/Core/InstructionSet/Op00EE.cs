@@ -1,7 +1,7 @@
 ﻿namespace Chip8Emulator.Core.InstructionSet
 {
     // 00EE - RET
-    public class ReturnInstruction : IInstruction
+    public class Op00EE : IInstruction
     {
         public bool Match(ushort opcode) => opcode == 0x00EE;
 

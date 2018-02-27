@@ -1,7 +1,7 @@
 ﻿namespace Chip8Emulator.Core.InstructionSet
 {
     // 4xkk - SNE Vx, byte
-    public class SkipIfNotEqualsConstantInstruction : IInstruction
+    public class Op4xkk : IInstruction
     {
         public bool Match(ushort opcode) => (opcode & 0xF000) == 0x4000;
 

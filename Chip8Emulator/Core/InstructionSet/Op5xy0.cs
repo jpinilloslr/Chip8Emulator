@@ -1,7 +1,7 @@
 ﻿namespace Chip8Emulator.Core.InstructionSet
 {
     // 5xy0 - SE Vx, Vy
-    public class SkipIfEqualsRegisterInstruction : IInstruction
+    public class Op5xy0 : IInstruction
     {
         public bool Match(ushort opcode) => (opcode & 0xF000) == 0x5000;
 

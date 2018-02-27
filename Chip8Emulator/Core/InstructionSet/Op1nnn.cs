@@ -1,7 +1,7 @@
 ﻿namespace Chip8Emulator.Core.InstructionSet
 {
     // 1nnn - JP addr
-    public class JumpInstruction : IInstruction
+    public class Op1nnn : IInstruction
     {
         public bool Match(ushort opcode) => (opcode & 0xF000) == 0x1000;
 
