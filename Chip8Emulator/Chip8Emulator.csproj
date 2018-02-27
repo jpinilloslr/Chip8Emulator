@@ -49,6 +49,7 @@
     <Compile Include="Core\Cpu.cs" />
     <Compile Include="Core\GraphicMemory.cs" />
     <Compile Include="Core\Input.cs" />
+    <Compile Include="Core\InstructionSet\AddInstruction.cs" />
     <Compile Include="Core\InstructionSet\SkipIfEqualsRegisterInstruction.cs" />
     <Compile Include="Core\InstructionSet\SkipIfNotEqualsConstantInstruction.cs" />
     <Compile Include="Core\InstructionSet\SkipIfEqualsConstantInstruction.cs" />
