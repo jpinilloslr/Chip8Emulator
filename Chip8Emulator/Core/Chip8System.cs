@@ -1,18 +1,17 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 
 namespace Chip8Emulator.Core
 {
     public class Chip8System
     {
-        private short _delayTimer;
-        private short _soundTimer;
+        public short DelayTimer { get; private set; }
+        public short SoundTimer { get; private set; }
 
-        private Cpu _cpu;
-        private Stack _stack;
-        private Input _input;
-        private Memory _memory;
-        private GraphicMemory _graphicMemory;        
+        public Cpu Cpu { get; private set; }
+        public Stack Stack { get; private set; }
+        public Input Input { get; private set; }
+        public Memory Memory { get; private set; }
+        public GraphicMemory GraphicMemory { get; private set; }
 
         public Chip8System()
         {
@@ -21,11 +20,11 @@ namespace Chip8Emulator.Core
 
         public void Initialize()
         {
-            _cpu = new Cpu {PC = 0x200};
-            _stack = new Stack();
-            _input = new Input();
-            _memory = new Memory();
-            _graphicMemory = new GraphicMemory();
+            Cpu = new Cpu(this);
+            Input = new Input();
+            Stack = new Stack();
+            Memory = new Memory();
+            GraphicMemory = new GraphicMemory();
         }
 
         public void LoadRom(string fileName)
@@ -33,13 +32,13 @@ namespace Chip8Emulator.Core
             var rom = File.ReadAllBytes(fileName);
             for (var i = 0; i < rom.Length; i++)
             {
-                _memory[0x200 + i] = rom[i];
+                Memory[0x200 + i] = rom[i];
             }
         }
 
         public void Step()
         {
-            
+            Cpu.Step();
         }
     }
 }

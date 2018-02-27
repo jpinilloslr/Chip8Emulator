@@ -49,6 +49,9 @@
     <Compile Include="Core\Cpu.cs" />
     <Compile Include="Core\GraphicMemory.cs" />
     <Compile Include="Core\Input.cs" />
+    <Compile Include="Core\InstructionSet\IInstruction.cs" />
+    <Compile Include="Core\InstructionSet\LoadAddressInstruction.cs" />
+    <Compile Include="Core\InstructionSet\LoadRegisterInstruction.cs" />
     <Compile Include="Core\Memory.cs" />
     <Compile Include="Core\Stack.cs" />
     <Compile Include="Core\Chip8System.cs" />

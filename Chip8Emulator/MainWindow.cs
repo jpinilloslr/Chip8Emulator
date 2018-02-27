@@ -13,6 +13,11 @@ namespace Chip8Emulator
             _system = new Chip8System();
             _system.Initialize();
             _system.LoadRom(@"Games\PONG");
+            
+            for (;;)
+            {
+                _system.Step();
+            }
         }
     }
 }
