@@ -47,6 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\Cpu.cs" />
+    <Compile Include="Core\HardwareInterfaces\IScreen.cs" />
+    <Compile Include="Core\HardwareInterfaces\IKeyboard.cs" />
+    <Compile Include="Core\HardwareInterfaces\IBuzzer.cs" />
     <Compile Include="Core\GraphicMemory.cs" />
     <Compile Include="Core\Input.cs" />
     <Compile Include="Core\InstructionSet\Op00E0.cs" />
@@ -96,6 +99,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

@@ -1,10 +1,15 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
+using Chip8Emulator.Core.HardwareInterfaces;
 
 namespace Chip8Emulator.Core
 {
     public class Chip8System
     {
+        private bool _refreshScreen;
+        private readonly IScreen _screen;
+        private readonly IBuzzer _buzzer;
+        private readonly IKeyboard _keyboard;
+
         public byte DelayTimer { get; set; }
         public byte SoundTimer { get; set; }
 
@@ -14,8 +19,11 @@ namespace Chip8Emulator.Core
         public Memory Memory { get; private set; }
         public GraphicMemory GraphicMemory { get; private set; }
 
-        public Chip8System()
+        public Chip8System(IScreen screen, IBuzzer buzzer, IKeyboard keyboard)
         {
+            _screen = screen;
+            _buzzer = buzzer;
+            _keyboard = keyboard;
             Initialize();
         }
 
@@ -27,6 +35,7 @@ namespace Chip8Emulator.Core
             Memory = new Memory();
             GraphicMemory = new GraphicMemory();
             LoadSystemFontSet();
+            _keyboard.BindKeyboardEvents(Input);
         }
 
         public void LoadRom(string fileName)
@@ -40,9 +49,11 @@ namespace Chip8Emulator.Core
 
         public void Step()
         {
+            _refreshScreen = false;
             if (Cpu.Step())
             {
                 ProcessTimers();
+                ManageGraphics();
             }
         }
 
@@ -58,8 +69,16 @@ namespace Chip8Emulator.Core
                 SoundTimer--;
                 if (SoundTimer == 0)
                 {
-                    Console.Beep();
+                    _buzzer.Beep();
                 }
+            }
+        }
+
+        private void ManageGraphics()
+        {
+            if (_refreshScreen)
+            {
+                _screen.Refresh(GraphicMemory);
             }
         }
 

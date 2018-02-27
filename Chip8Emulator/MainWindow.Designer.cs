@@ -29,11 +29,29 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.systemTimer = new System.Windows.Forms.Timer(this.components);
+            this.SuspendLayout();
+            // 
+            // systemTimer
+            // 
+            this.systemTimer.Enabled = true;
+            this.systemTimer.Interval = 60;
+            this.systemTimer.Tick += new System.EventHandler(this.systemTimer_Tick);
+            // 
+            // MainWindow
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(627, 407);
+            this.Name = "MainWindow";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Timer systemTimer;
     }
 }
 
