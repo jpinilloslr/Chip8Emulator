@@ -18,7 +18,7 @@
 
         public ushort Pop()
         {
-            var address = _data[_sp];
+            var address = _data[_sp - 1];
             _sp--;
             return address;
         }
