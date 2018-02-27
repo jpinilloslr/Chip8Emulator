@@ -52,6 +52,7 @@
     <Compile Include="Core\InstructionSet\AddConstantInstruction.cs" />
     <Compile Include="Core\InstructionSet\SubRegisterInstruction.cs" />
     <Compile Include="Core\InstructionSet\AddRegisterInstruction.cs" />
+    <Compile Include="Core\InstructionSet\LoadBCDOfRegisterInstruction.cs" />
     <Compile Include="Core\InstructionSet\XorRegisterInstruction.cs" />
     <Compile Include="Core\InstructionSet\OrRegisterInstruction.cs" />
     <Compile Include="Core\InstructionSet\AndRegisterInstruction.cs" />
