@@ -1,7 +1,7 @@
 ﻿namespace Chip8Emulator.Core.InstructionSet
 {
     // 7xkk - ADD Vx, byte
-    public class AddInstruction : IInstruction
+    public class AddConstantInstruction : IInstruction
     {
         public bool Match(ushort opcode) => (opcode & 0xF000) == 0x7000;
 
