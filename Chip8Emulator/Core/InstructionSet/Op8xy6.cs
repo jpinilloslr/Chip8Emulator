@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Chip8Emulator.Core.InstructionSet
+﻿namespace Chip8Emulator.Core.InstructionSet
 {
     // 8xy6 - SHR Vx {, Vy}
     public class Op8xy6 : IInstruction
