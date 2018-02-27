@@ -49,6 +49,7 @@
     <Compile Include="Core\Cpu.cs" />
     <Compile Include="Core\GraphicMemory.cs" />
     <Compile Include="Core\Input.cs" />
+    <Compile Include="Core\InstructionSet\SystemInstruction.cs" />
     <Compile Include="Core\InstructionSet\ReturnInstruction.cs" />
     <Compile Include="Core\InstructionSet\CallInstruction.cs" />
     <Compile Include="Core\InstructionSet\IInstruction.cs" />
