@@ -1,6 +1,6 @@
 ﻿namespace Chip8Emulator.Core.InstructionSet
 {
-    //6xkk - LD Vx, byte
+    // 6xkk - LD Vx, byte
     public class LoadRegisterInstruction : IInstruction
     {
         public bool Match(ushort opcode) => (opcode & 0xF000) == 0x6000;
