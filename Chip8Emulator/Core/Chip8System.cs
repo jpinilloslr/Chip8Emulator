@@ -1,10 +1,14 @@
-﻿using System.IO;
+﻿using System;
+using System.Diagnostics;
+using System.IO;
 using Chip8Emulator.Core.HardwareInterfaces;
 
 namespace Chip8Emulator.Core
 {
     public class Chip8System
     {
+        private long _ticks;
+        private int _instuctions;
         private bool _invalidatedScreen;
         private readonly IScreen _screen;
         private readonly IBuzzer _buzzer;
@@ -55,6 +59,14 @@ namespace Chip8Emulator.Core
                 ProcessTimers();
                 ManageGraphics();
             }
+            _instuctions++;
+            if (Environment.TickCount - _ticks > 1000)
+            {
+                _ticks = Environment.TickCount;
+                Console.WriteLine($"{_instuctions} inst/s");
+                _instuctions = 0;
+            }
+            
         }
 
         public void InvalidateScreen() => _invalidatedScreen = true;

@@ -57,6 +57,8 @@
             this.Controls.Add(this.pictureBox);
             this.Name = "MainWindow";
             this.Text = "Chip8Emulator";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainWindow_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MainWindow_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
 
