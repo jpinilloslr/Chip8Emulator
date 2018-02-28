@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Chip8Emulator
 {
@@ -14,9 +10,10 @@ namespace Chip8Emulator
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainWindow());
+            using (var game = new MainWindow())
+            {
+                game.Run(60); // 60 Hz
+            }
         }
     }
 }
