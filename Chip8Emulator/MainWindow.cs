@@ -9,20 +9,22 @@ namespace Chip8Emulator
     public partial class MainWindow : Form, IScreen, IKeyboard, IBuzzer
     {
         private readonly Chip8System _system;
+        private readonly Graphics _graphics;
 
         public MainWindow()
         {
             InitializeComponent();
             _system = new Chip8System(this, this, this);
             _system.Initialize();
-            _system.LoadRom(@"Games\BLINKY");            
+            _system.LoadRom(@"Games\BLINKY");
+            _graphics = pictureBox.CreateGraphics();
+            _graphics.Clear(Color.Black);
         }
 
         public void Refresh(GraphicMemory graphicMemory)
         {
-            const int pixelSize = 7;
-            var graphics = pictureBox.CreateGraphics();
-            graphics.Clear(Color.Black);
+            const int pixelSize = 10;            
+            _graphics.Clear(Color.Black);
             for (var x = 0; x < 64; x++)
             {
                 for (var y = 0; y < 32; y++)
@@ -30,7 +32,7 @@ namespace Chip8Emulator
                     var pixel = graphicMemory[x+y*64];
                     if (pixel == 1)
                     {
-                        graphics.FillRectangle(Brushes.White,
+                        _graphics.FillRectangle(Brushes.White,
                             new Rectangle(x * pixelSize, y * pixelSize, pixelSize, pixelSize));
                     }
                 }

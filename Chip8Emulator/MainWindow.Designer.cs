@@ -45,7 +45,7 @@
             this.pictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox.Location = new System.Drawing.Point(0, 0);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(622, 273);
+            this.pictureBox.Size = new System.Drawing.Size(852, 388);
             this.pictureBox.TabIndex = 0;
             this.pictureBox.TabStop = false;
             // 
@@ -53,7 +53,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(622, 273);
+            this.ClientSize = new System.Drawing.Size(852, 388);
             this.Controls.Add(this.pictureBox);
             this.Name = "MainWindow";
             this.Text = "Chip8Emulator";

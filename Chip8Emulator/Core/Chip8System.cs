@@ -1,6 +1,4 @@
-﻿using System;
-using System.IO;
-using System.Linq;
+﻿using System.IO;
 using Chip8Emulator.Core.HardwareInterfaces;
 
 namespace Chip8Emulator.Core
@@ -57,7 +55,6 @@ namespace Chip8Emulator.Core
                 ProcessTimers();
                 ManageGraphics();
             }
-            //DumpAll();
         }
 
         public void InvalidateScreen() => _invalidatedScreen = true;
@@ -113,20 +110,6 @@ namespace Chip8Emulator.Core
             {
                 Memory[i] = data[i];
             }
-        }
-
-        public void DumpAll()
-        {
-            for (var i = 0; i < 16; i++)
-                Console.WriteLine($"CPU.V{i}: {Cpu.V[i]}");
-            Console.WriteLine($"CPU.I: {Cpu.I & 0x0FFF}");
-            Console.WriteLine($"CPU.PC: {Cpu.PC & 0x0FFF}");
-            Console.WriteLine("--------------------");
-            Console.WriteLine("Graphic memory:");
-            Console.WriteLine(string.Join(", ", GraphicMemory));
-            Console.WriteLine("--------------------");
-            Console.WriteLine("Memory:");
-            Console.WriteLine(string.Join(", ", Memory));
         }
     }
 }
