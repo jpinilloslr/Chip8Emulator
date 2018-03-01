@@ -25,7 +25,7 @@ namespace Chip8Emulator.Core.InstructionSet
                         continue; 
 
                     var index = x + xLine + (y + yLine) * 64;
-                    if (index > system.GraphicMemory.Size)
+                    if (index > system.GraphicMemory.Size - 1)
                         continue;
 
                     if (system.GraphicMemory[index] == 1) 
