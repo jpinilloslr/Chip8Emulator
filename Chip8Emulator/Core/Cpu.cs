@@ -36,7 +36,7 @@ namespace Chip8Emulator.Core
             var instruction = _instructionSet.FirstOrDefault(x => x.Match(opcode));
             if (instruction == null)
             {
-                throw new Exception("Unknown opcode");
+                throw new Exception("Unknown opcode.");
             }
             instruction.Run(opcode, _system);
             return instruction.ShouldContinueExecution();

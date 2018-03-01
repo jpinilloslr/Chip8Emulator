@@ -1,5 +1,6 @@
 ﻿using OpenTK;
 using OpenTK.Graphics.OpenGL;
+using OpenTK.Input;
 
 namespace Chip8Emulator
 {
@@ -15,11 +16,24 @@ namespace Chip8Emulator
 
         private void Initialize()
         {
+            WindowBorder = WindowBorder.Fixed;
             GL.MatrixMode(MatrixMode.Projection);
             GL.Ortho(0, 640, 320, 0, 0, 10);
             GL.MatrixMode(MatrixMode.Modelview);
             GL.LoadIdentity();
             RenderFrame += OnRenderFrame;
+            KeyDown += OnKeyDown;
+            KeyUp += OnKeyUp;
+        }
+
+        private void OnKeyUp(object sender, KeyboardKeyEventArgs keyboardKeyEventArgs)
+        {
+            OnKeyEvent(keyboardKeyEventArgs.Key, false);
+        }
+
+        private void OnKeyDown(object sender, KeyboardKeyEventArgs keyboardKeyEventArgs)
+        {
+            OnKeyEvent(keyboardKeyEventArgs.Key, true);
         }
 
         private void OnRenderFrame(object sender, FrameEventArgs frameEventArgs)
@@ -35,6 +49,8 @@ namespace Chip8Emulator
                 SwapBuffers();
             }
         }
+
+        protected abstract void OnKeyEvent(Key key, bool pressed);
 
         protected abstract void DrawFrame();
 
